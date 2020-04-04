@@ -37,14 +37,9 @@ var cookies = require('./node_modules/cookies');
 var static_files = {
     'index.html': fs.readFileSync('index.html'),
     'game-client.js': fs.readFileSync('game-client.js'),
-    'layout.css': fs.readFileSync('layout.css'),
-    'color.css': fs.readFileSync('color.css'),
-    'typography.css': fs.readFileSync('typography.css'),
-    'normalize.css': fs.readFileSync('thirdparty/normalize.css'),
-    'jquery.min.js': fs.readFileSync('thirdparty/jquery.min.js'),
-    'jquery-ui.min.js': fs.readFileSync('thirdparty/jquery-ui.min.js'),
-    'jquery.ui.touch-punch.min.js': fs.readFileSync('thirdparty/jquery.ui.touch-punch.min.js'),
-    'jquery.cookie.js': fs.readFileSync('thirdparty/jquery.cookie.js'),
+    'css/layout.css': fs.readFileSync('./css/layout.css'),
+    'css/color.css': fs.readFileSync('./css/color.css'),
+    'css/typography.css': fs.readFileSync('./css/typography.css'),
     'light_noise_diagonal.png': fs.readFileSync("media/light_noise_diagonal.png"),
     'wood.png': fs.readFileSync("media/dark_wood.png")
 };
@@ -970,7 +965,7 @@ server.on('request', function(request, response) {
     default:
         var f;
         // Assignment in if clase is purposeful
-        if (f = static_files[path[0]]) {
+        if (f = static_files[path.join('/')]) {
             var type = 'text/html';
             if (path[0].search('css$') >= 0) {
                 type = 'text/css';

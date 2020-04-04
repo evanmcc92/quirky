@@ -5,7 +5,7 @@
   GNU General Public License version 3, see <http://www.gnu.org/licenses/>.
 */
 
-@import url(normalize.css);
+@import url(https://necolas.github.io/normalize.css/2.0.1/normalize.css);
 @import url(color.css);
 @import url(typography.css);
 
